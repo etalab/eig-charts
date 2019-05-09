@@ -37,8 +37,8 @@
      :carte          (layout-content-area-wrapper "Carte des défis" "Explication optionnelle" charts/chartjs-map) 
      :promo          (layout-content-area-wrapper "Les promotions EIG" "Explication optionnelle" charts/chartjs-promo)
      :selection      (layout-content-area-wrapper "La sélection des EIG" "Explication optionnelle" charts/chartjs-selection)
-     :competences    (layout-content-area-wrapper "Les compétences EIG" "Explication optionnelle" charts/chartjs-competences)
-     :genres         (layout-content-area-wrapper "La répartition par genres" "Explication optionnelle" charts/chartjs-genres)
+     :competences    (layout-content-area-wrapper "Les compétences des EIG" "Explication optionnelle" charts/chartjs-competences)
+     :genre          (layout-content-area-wrapper "La répartition par genres" "Explication optionnelle" charts/chartjs-genre)
      :parcours       (layout-content-area-wrapper "Les parcours des EIG" "Explication optionnelle" charts/chartjs-parcours)
      :financement    (layout-content-area-wrapper "Le financement du programme EIG" "Explication optionnelle" charts/chartjs-financement)
      :depenses       (layout-content-area-wrapper "Les dépenses du programme EIG" "Explication optionnelle" charts/chartjs-depenses)
@@ -53,7 +53,7 @@
    [ant/menu-item {:key "/selection"} "Sélection"]
    [ant/menu-sub-menu {:title "Profils EIG"}
     [ant/menu-item {:key "/competences"} "Compétences"]
-    [ant/menu-item {:key "/genres"} "Genres"]
+    [ant/menu-item {:key "/genre"} "Genre"]
     [ant/menu-item {:key "/parcours"} "Parcours"]]
    [ant/menu-item {:key "/financement"} "Financement"]
    [ant/menu-item {:key "/depenses"} "Dépenses"]

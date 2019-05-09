@@ -11,7 +11,7 @@
         "promo"          :promo
         "selection"      :selection
         "competences"    :competences
-        "genres"         :genres
+        "genre"          :genre
         "parcours"       :parcours
         "financement"    :financement
         "depenses"       :depenses

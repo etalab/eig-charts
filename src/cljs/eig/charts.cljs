@@ -193,15 +193,15 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(def genres-keys
+(def genre-keys
   ["Pourcentage de femmes parmi les développeurs"
    "Pourcentage de femmes parmi les data scientists"
    "Pourcentage de femmes parmi les designers"])
 
-(def genres-data
-  (into [] (vals (select-keys report/eig genres-keys))))
+(def genre-data
+  (into [] (vals (select-keys report/eig genre-keys))))
 
-(defn genres []
+(defn genre []
   (let [context (.getContext (.getElementById js/document "chartjs") "2d")
         chart-data
         {:type    "bar"
@@ -209,13 +209,13 @@
                    :responsive "true"
                    :scales     {:yAxes [{:ticks {:callback (fn [v _ _] (str v "%"))}}]}}
          :data    {:labels   ["2017" "2018" "2019"]
-                   :datasets [{:data            (get genres-data 0)
+                   :datasets [{:data            (get genre-data 0)
                                :label           "Pourcentage de femmes parmi les développeurs"
                                :backgroundColor color/blue}
-                              {:data            (get genres-data 1)
+                              {:data            (get genre-data 1)
                                :label           "Pourcentage de femmes parmi les data scientists"
                                :backgroundColor color/green}
-                              {:data            (get genres-data 2)
+                              {:data            (get genre-data 2)
                                :label           "Pourcentage de femmes parmi les designers"
                                :backgroundColor color/orange}]}}]
     (js/Chart. context (clj->js chart-data))))
@@ -328,10 +328,10 @@
     :display-name        "chartjs-component"
     :reagent-render      (fn [] [:canvas {:id "chartjs"}])})) 
 
-(defn chartjs-genres
+(defn chartjs-genre
   []
   (reagent/create-class
-   {:component-did-mount #(genres)
+   {:component-did-mount #(genre)
     :display-name        "chartjs-component"
     :reagent-render      (fn [] [:canvas {:id "chartjs"}])})) 
 
