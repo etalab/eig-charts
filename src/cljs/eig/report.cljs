@@ -23,7 +23,7 @@
    [{:admin "Commisariat Général à l'Egalité des Territoires" :eig2018 1 :lon 48.8507 :lat 2.30835}]
    "Ministère de l'Economie, des Finances, de l'Action et des Comptes Publics"
    [{:admin "Ministère de l'Action et des Comptes Publics" :eig2018 1 :eig2019 1 :lon 48.841 :lat 2.37797}
-    {:admin "Ministère de l'Economie et des Finances" :eig2018 1 :lon 48.851 :lat 2.38797}
+    {:admin "Ministère de l'Economie et des Finances" :eig2018 1 :lon 48.843 :lat 2.37797}
     {:admin "Direction Générale des Finances Publiques" :eig2017 1 :lon 48.841 :lat 2.37797}
     {:admin "Direction générale de la concurrence, de la consommation et de la répression des fraudes" :eig2019 1 :lon 48.8351 :lat 2.36915}]
    "Ministère de la Transition Ecologique et Solidaire"
