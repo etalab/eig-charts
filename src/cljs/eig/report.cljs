@@ -2,7 +2,7 @@
 
 (def administrations_map
   {"Ministère de l'Intérieur"
-   [{:admin "Direction de la Gendarmerie Nationale" :eig2018 1 :lon 48.4855 :lat 2.1608}
+   [{:admin "Direction de la Gendarmerie Nationale" :eig2018 1 :lon 48.8149 :lat 2.2693}
     {:admin "Direction Interministérielle à l'accueil et à l'intégration des réfugiés" :eig2019 1 :lon 48.8491 :lat 2.40674}
     {:admin "Mission de gouvernance ministérielle des SIC" :eig2017 2 :eig2018 1 :lon 48.8305 :lat 2.38702}
     {:admin "En partenariat avec l'ANTAI" :eig2019 1 :lon 48.1133 :lat -1.71577}]
