@@ -8,7 +8,6 @@
                  [org.clojure/clojure "1.10.0"]
                  [org.clojure/clojurescript "1.10.520"]
                  [reagent "0.8.1"]
-                 [reagent-utils "0.3.3"]
                  [bidi "2.1.6"]
                  [cljsjs/chartjs "2.8.0-0"]
                  [venantius/accountant "0.2.4"]]
