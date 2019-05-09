@@ -1,5 +1,5 @@
 (ns eig.charts
-  (:require [reagent.core :as r]
+  (:require [reagent.core :as reagent]
             [eig.report :as report]
             [eig.colors :as color]
             [cljsjs.chartjs]))
@@ -37,8 +37,8 @@
               lmap))))
 
 (defn chartjs-map []
-  (r/create-class {:reagent-render      map-render
-                   :component-did-mount map-did-mount}))
+  (reagent/create-class {:reagent-render      map-render
+                         :component-did-mount map-did-mount}))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -60,13 +60,6 @@
                                :label           "Coût total des salaires des EIG"
                                :backgroundColor color/orange}]}}]
     (js/Chart. context (clj->js chart-data))))
-
-(defn chartjs-financement
-  []
-  (r/create-class
-   {:component-did-mount #(financement)
-    :display-name        "chartjs-component"
-    :reagent-render      (fn [] [:canvas {:id "chartjs"}])})) 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -98,13 +91,6 @@
                                :fill             nil}]}}]
     (js/Chart. context (clj->js chart-data))))
 
-(defn chartjs-promo
-  []
-  (r/create-class
-   {:component-did-mount #(promotion)
-    :display-name        "chartjs-component"
-    :reagent-render      (fn [] [:canvas {:id "chartjs"}])})) 
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defn selection []
@@ -134,13 +120,6 @@
                                :pointHoverRadius 15
                                :fill             nil}]}}]
     (js/Chart. context (clj->js chart-data))))
-
-(defn chartjs-selection
-  []
-  (r/create-class
-   {:component-did-mount #(selection)
-    :display-name        "chartjs-component"
-    :reagent-render      (fn [] [:canvas {:id "chartjs"}])})) 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -181,79 +160,6 @@
                               ]}}]
     (js/Chart. context (clj->js chart-data))))
 
-(defn chartjs-depenses
-  []
-  (r/create-class
-   {:component-did-mount #(depenses)
-    :display-name        "chartjs-component"
-    :reagent-render      (fn [] [:canvas {:id "chartjs"}])})) 
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;; (def eig-keys ["Part des salaires pris en charge par le PIA"
-;;                "Part des défis autofinancés dans le total des salaires"
-;;                "Part prise en charge par les administrations en co-financement"])
-
-;; (def eig-parts
-;;   (vals (select-keys report/financement eig-keys)))
-
-;; (defn eig2017 []
-;;   (let [context (.getContext (.getElementById js/document "chartjs") "2d")
-;;         chart-data
-;;         {:type    "pie"
-;;          :options {:title      {:display "true" :text "EIG 2017"}
-;;                    :responsive "true"}
-;;          :data    {:labels   eig-keys
-;;                    :datasets [{:data            (map first eig-parts)
-;;                                :label           "EIG 1 - 2017"
-;;                                :backgroundColor [color/blue color/green color/orange]}]}}]
-;;     (js/Chart. context (clj->js chart-data))))
-
-;; (defn eig2018 []
-;;   (let [context (.getContext (.getElementById js/document "chartjs") "2d")
-;;         chart-data
-;;         {:type    "pie"
-;;          :options {:title      {:display "true" :text "EIG 2018"}
-;;                    :responsive "true"}
-;;          :data    {:labels   eig-keys
-;;                    :datasets [{:data            (map second eig-parts)
-;;                                :label           "EIG 2 - 2018"
-;;                                :backgroundColor [color/blue color/green color/orange]}]}}]
-;;     (js/Chart. context (clj->js chart-data))))
-
-;; (defn eig2019 []
-;;   (let [context (.getContext (.getElementById js/document "chartjs") "2d")
-;;         chart-data
-;;         {:type    "pie"
-;;          :options {:title      {:display "true" :text "EIG 2019"}
-;;                    :responsive "true"}
-;;          :data    {:labels   eig-keys
-;;                    :datasets [{:data            (map #(nth % 2) eig-parts)
-;;                                :label           "EIG 2 - 2019"
-;;                                :backgroundColor [color/blue color/green color/orange]}]}}]
-;;     (js/Chart. context (clj->js chart-data))))
-
-;; (defn chartjs-eig2019
-;;   []
-;;   (r/create-class
-;;    {:component-did-mount #(eig2019)
-;;     :display-name        "chartjs-component"
-;;     :reagent-render      (fn [] [:canvas {:id "chartjs"}])})) 
-
-;; (defn chartjs-eig2018
-;;   []
-;;   (r/create-class
-;;    {:component-did-mount #(eig2018)
-;;     :display-name        "chartjs-component"
-;;     :reagent-render      (fn [] [:canvas {:id "chartjs"}])})) 
-
-;; (defn chartjs-eig2017
-;;   []
-;;   (r/create-class
-;;    {:component-did-mount #(eig2017)
-;;     :display-name        "chartjs-component"
-;;     :reagent-render      (fn [] [:canvas {:id "chartjs"}])})) 
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (def competences-keys
@@ -285,13 +191,6 @@
                                :backgroundColor color/orange}]}}]
     (js/Chart. context (clj->js chart-data))))
 
-(defn chartjs-competences
-  []
-  (r/create-class
-   {:component-did-mount #(competences)
-    :display-name        "chartjs-component"
-    :reagent-render      (fn [] [:canvas {:id "chartjs"}])})) 
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (def genres-keys
@@ -321,13 +220,6 @@
                                :backgroundColor color/orange}]}}]
     (js/Chart. context (clj->js chart-data))))
 
-(defn chartjs-genres
-  []
-  (r/create-class
-   {:component-did-mount #(genres)
-    :display-name        "chartjs-component"
-    :reagent-render      (fn [] [:canvas {:id "chartjs"}])})) 
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defn parcours []
@@ -354,44 +246,6 @@
                                :backgroundColor color/grey}]}}]
     (js/Chart. context (clj->js chart-data))))
 
-(defn chartjs-parcours
-  []
-  (r/create-class
-   {:component-did-mount #(parcours)
-    :display-name        "chartjs-component"
-    :reagent-render      (fn [] [:canvas {:id "chartjs"}])})) 
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;; (defn depenses []
-;;   (let [context (.getContext (.getElementById js/document "chartjs") "2d")
-;;         chart-data
-;;         {:type    "bar"
-;;          :options {:title      {:display "true" :text "Les dépenses du programme EIG"}
-;;                    :responsive "true"
-;;                    :scales     {:xAxes [{:stacked true}]
-;;                                 :yAxes [{:stacked true
-;;                                          :ticks   {:callback (fn [v _ _] (str v "%"))}}]}}
-;;          :data    {:labels   ["2017" "2018" "2019"]
-;;                    :datasets [{:data            (get report/financement "Part des salaires dans le coût total du programme")
-;;                                :label           "Part des salaires dans le coût total du programme"
-;;                                :backgroundColor color/blue}
-;;                               {:data            (get report/financement "Part de la recherche dans le coût total du programme")
-;;                                :label           "Part de la recherche dans le coût total du programme"
-;;                                :backgroundColor color/green}
-;;                               {:data            (get report/financement "Part du programme d'accompagnement dans le coût total du programme")
-;;                                :label           "Part du programme d'accompagnement dans le coût total du programme"
-;;                                :backgroundColor color/orange}
-;;                               ]}}]
-;;     (js/Chart. context (clj->js chart-data))))
-
-;; (defn chartjs-depenses
-;;   []
-;;   (r/create-class
-;;    {:component-did-mount #(depenses)
-;;     :display-name        "chartjs-component"
-;;     :reagent-render      (fn [] [:canvas {:id "chartjs"}])})) 
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defn accompagnement []
@@ -411,13 +265,6 @@
                                :label           "Sessions hors-les-murs"
                                :backgroundColor color/orange}]}}]
     (js/Chart. context (clj->js chart-data))))
-
-(defn chartjs-accompagnement
-  []
-  (r/create-class
-   {:component-did-mount #(accompagnement)
-    :display-name        "chartjs-component"
-    :reagent-render      (fn [] [:canvas {:id "chartjs"}])})) 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -444,9 +291,67 @@
                                :backgroundColor color/blue}]}}]
     (js/Chart. context (clj->js chart-data))))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defn chartjs-financement
+  []
+  (reagent/create-class
+   {:component-did-mount #(financement)
+    :display-name        "chartjs-component"
+    :reagent-render      (fn [] [:canvas {:id "chartjs"}])})) 
+
+(defn chartjs-promo
+  []
+  (reagent/create-class
+   {:component-did-mount #(promotion)
+    :display-name        "chartjs-component"
+    :reagent-render      (fn [] [:canvas {:id "chartjs"}])})) 
+
+(defn chartjs-selection
+  []
+  (reagent/create-class
+   {:component-did-mount #(selection)
+    :display-name        "chartjs-component"
+    :reagent-render      (fn [] [:canvas {:id "chartjs"}])})) 
+
+(defn chartjs-depenses
+  []
+  (reagent/create-class
+   {:component-did-mount #(depenses)
+    :display-name        "chartjs-component"
+    :reagent-render      (fn [] [:canvas {:id "chartjs"}])})) 
+
+(defn chartjs-competences
+  []
+  (reagent/create-class
+   {:component-did-mount #(competences)
+    :display-name        "chartjs-component"
+    :reagent-render      (fn [] [:canvas {:id "chartjs"}])})) 
+
+(defn chartjs-genres
+  []
+  (reagent/create-class
+   {:component-did-mount #(genres)
+    :display-name        "chartjs-component"
+    :reagent-render      (fn [] [:canvas {:id "chartjs"}])})) 
+
+(defn chartjs-parcours
+  []
+  (reagent/create-class
+   {:component-did-mount #(parcours)
+    :display-name        "chartjs-component"
+    :reagent-render      (fn [] [:canvas {:id "chartjs"}])})) 
+
+(defn chartjs-accompagnement
+  []
+  (reagent/create-class
+   {:component-did-mount #(accompagnement)
+    :display-name        "chartjs-component"
+    :reagent-render      (fn [] [:canvas {:id "chartjs"}])})) 
+
 (defn chartjs-communication
   []
-  (r/create-class
+  (reagent/create-class
    {:component-did-mount #(communication)
     :display-name        "chartjs-component"
     :reagent-render      (fn [] [:canvas {:id "chartjs"}])})) 

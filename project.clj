@@ -1,19 +1,16 @@
-(defproject eig "0.1.0"
+(defproject eig "0.2.0"
   :description "EIG Show: displays graphics for EIG"
   :url "https://entrepreneur-interet-general.etalab.gouv.fr/"
   :license {:name "Eclipse Public License - v 2.0"
             :url  "http://www.eclipse.org/legal/epl-v20.html"}
   :dependencies [[antizer "0.3.1"]
                  [cljsjs/leaflet "1.4.0-0"]
-                 [hiccup "1.0.5"]
                  [org.clojure/clojure "1.10.0"]
                  [org.clojure/clojurescript "1.10.520"]
-                 [org.clojure/core.async "0.4.490"]
-                 [re-frame "0.10.6"]
                  [reagent "0.8.1"]
-                 [reagent-utils "0.3.2"]
+                 [reagent-utils "0.3.3"]
+                 [bidi "2.1.6"]
                  [cljsjs/chartjs "2.8.0-0"]
-                 [secretary "1.2.3"]
                  [venantius/accountant "0.2.4"]]
   :target-path "target/%s"
   :resource-paths ["resources"]
@@ -21,11 +18,9 @@
   :clean-targets ^{:protect false} ["resources/public/js/compiled" "target"]
   :figwheel {:css-dirs ["resources/public/css"]}
   :profiles
-  {:dev     {:dependencies [[binaryage/devtools "0.9.10"]
-                            [figwheel-sidecar "0.5.18"]]
-             :plugins      [[lein-figwheel "0.5.18"]]}
-   :prod    {}
-   :uberjar {:aot :all}}
+  {:dev {:dependencies [[binaryage/devtools "0.9.10"]
+                        [figwheel-sidecar "0.5.18"]]
+         :plugins      [[lein-figwheel "0.5.18"]]}}
   :cljsbuild
   {:builds
    [{:id           "dev"
