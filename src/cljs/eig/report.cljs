@@ -140,3 +140,21 @@
 (def encadrement
   {"Nombre de membres de l'équipe d'encadrement du programme" [1 3 4]
    "Nombre d'EIG Link"                                        [0 1 2]})
+
+(defn a-propos []
+  [:div {:style {:padding "2em"}}
+   [:h1 "Présentation des données"]
+   [:p "Ce site présente quelques données liées au programme "
+    [:a {:href "https://entrepreneur-interet-general.etalab.gouv.fr/"} "Entrepreneurs d'intérêt général."]]
+   [:p "Les données exposées ici sous forme de graphiques sont téléchargeables au format .ods."] ; FIXME
+   [:h1 "Code source et licence"]
+   [:p "Le code source de ce site est "
+    [:a {:href "http://github.com/etalab/eig-charts"} "public"] "."]
+   [:p "Si vous souhaitez corriger une erreur, merci de le signaler "
+    [:a {:href "http://github.com/etalab/eig-charts/issues"} "ici"] " ou par email."]
+   [:h1 "Contact"]
+   [:p "Pour toute question sur son contenu site, merci d'écrire à "
+    [:span.email "entrepreneur-interet-general AT data.gouv.fr"] "."]
+   [:p "Pour toute question sur le code source de ce site, merci d'écrire à "
+    [:span.email "bastien.guerry AT data.gouv.fr"] "."]])
+

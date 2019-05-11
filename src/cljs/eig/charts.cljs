@@ -355,3 +355,37 @@
    {:component-did-mount #(communication)
     :display-name        "chartjs-component"
     :reagent-render      (fn [] [:canvas {:id "chartjs"}])})) 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(def explications
+  {"a-propos"       {:component report/a-propos}
+   "carte"          {:title     "Carte des défis"
+                     :component chartjs-map}
+   "promo"          {:title     "Les promotions EIG"
+                     :context   "Les promotions du programme sont composées d’entrepreneurs d’intérêt général et d’agents publics « mentors » qui forment la communauté EIG et travaillent ensemble au sein de défis."
+                     :component chartjs-promo}
+   "selection"      {:title     "La sélection des EIG"
+                     :context   "L’appel à candidatures des EIG est lancé après un appel à projets auprès des administrations. La sélection s’opère en deux temps : les candidats retenus après l’appel à candidatures passent devant un jury composé des mentors des défis et de personnalités issues de l’écosystème du numérique afin de choisir les lauréats qui deviendront des EIG."
+                     :component chartjs-selection}
+   "competences"    {:title     "Les compétences des EIG"
+                     :context   "Les EIG amènent dans leurs administrations trois types de compétences : développeurs et développeuses, data scientists et designers. Ce graphe indique la part de chacune de ces compétences dans les trois promotions EIG."
+                     :component chartjs-competences}
+   "genre"          {:title     "La répartition par genres"
+                     :context   "La part des femmes au sein des EIG reste minoritaire parmi les participants, mais correspond au taux de candidatures féminines."
+                     :component chartjs-genre}
+   "parcours"       {:title     "Les parcours des EIG"
+                     :context   "À la suite des deux premières promotions, près de la moitié des EIG ont prolongé, sous différentes formes, leurs parcours dans l’administrations. Les données sur les EIG 3 seront disponibles à la fin de leurs défis en novembre 2019."
+                     :component chartjs-parcours}
+   "financement"    {:title     "Le financement du programme EIG"
+                     :context   "Le programme EIG est financé par le Programme d’investissements d’avenir. Depuis la troisième promotion, les administrations participantes cofinancent le salaires des EIG qu’elles accueillent."
+                     :component chartjs-financement}
+   "depenses"       {:title     "Les dépenses du programme EIG"
+                     :context   "Le budget du programme EIG est réparti sur quatre postes de dépenses : les salaires des EIG sont cofinancés par les administrations d’accueil et le PIA, le programme d’accompagnement participe à la réussite des défis, la communication permet d’assurer la notoriété du programme et d’attirer des compétences de pointe dans l’administrations, tandis que les liens avec la recherche permettent un retour sur la dimension de transformation numérique permise par le programme. Ce graphe présente la part de chacun de ces postes de dépenses pour le programme EIG. Les dépenses indiquées pour les promotions 1 et 2 correspondent aux dépenses réelles, et celles de la promotion 3, toujours en cours, correspondent aux dépenses prévisionnelles."
+                     :component chartjs-depenses}
+   "accompagnement" {:title     "Le programme d'accompagnement"
+                     :context   [:div "Le programme d’" [:a {:href "https://entrepreneur-interet-general.etalab.gouv.fr/accompagnement.html"} "accompagnement"] " du programme EIG se décline sous différentes composantes : un accompagnement collectif des EIG et des mentors, un accompagnement individuel des défis, une mise en relation avec des acteurs pertinents pour la réussite des défis, une médiation entre les EIG et les mentors. Ce graphe présente l’accompagnement collectif du programme qui prend la forme de sessions d’accompagnement, de semaine de lancement de la promotion et de sessions hors-les-murs."]
+                     :component chartjs-accompagnement}
+   "communication"  {:title     "La communication du programme EIG"
+                     :context   "Le programme EIG communique via différents canaux : dans la presse, via les blogs Etalab et EIG et via d’autres sites administratifs."
+                     :component chartjs-communication}})

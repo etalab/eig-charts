@@ -18,8 +18,8 @@
   (reset! views/current-page "selection"))
 (secretary/defroute "/#competences" []
   (reset! views/current-page "competences"))
-(secretary/defroute "/#genres" []
-  (reset! views/current-page "genres"))
+(secretary/defroute "/#genre" []
+  (reset! views/current-page "genre"))
 (secretary/defroute "/#parcours" []
   (reset! views/current-page "parcours"))
 (secretary/defroute "/#financement" []
