@@ -137,29 +137,29 @@
                    :responsive "true"}
          :data    {:labels   ["2017" "2018" "2019"]
                    :datasets [{:data             (get report/financement "Part des salaires dans le coût total du programme")
-                               :label            "Part des salaires dans le coût total du programme"
+                               :label            "Part des salaires"
                                :pointRadius      10
                                :pointHoverRadius 15
                                :backgroundColor  color/blue
                                :fill             "boundary"}
                               {:data             (get report/financement "Part du programme d'accompagnement dans le coût total du programme")
-                               :label            "Part du programme d'accompagnement dans le coût total du programme"
+                               :label            "Part du programme d'accompagnement"
                                :pointRadius      10
                                :pointHoverRadius 15
                                :backgroundColor  color/green
                                :fill             nil}
+                              {:data             (get report/financement "Part de la communication dans le coût total du programme")
+                               :label            "Part de la communication"
+                               :backgroundColor  color/red
+                               :pointRadius      10
+                               :pointHoverRadius 15
+                               :fill             nil}
                               {:data             (get report/financement "Part de la recherche dans le coût total du programme")
-                               :label            "Part de la recherche dans le coût total du programme"
+                               :label            "Part de la recherche"
                                :backgroundColor  color/orange
                                :pointRadius      10
                                :pointHoverRadius 15
                                :fill             nil}
-                              ;; {:data             (get report/financement "Part de la communication dans le coût total du programme")
-                              ;;  :label            "Part de la communication dans le coût total du programme"
-                              ;;  :backgroundColor  color/red
-                              ;;  :pointRadius      10
-                              ;;  :pointHoverRadius 15
-                              ;;  :fill             nil}
                               ]}}]
     (js/Chart. context (clj->js chart-data))))
 
