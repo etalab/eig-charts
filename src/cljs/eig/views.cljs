@@ -19,7 +19,7 @@
       (when-let [ctx (:context content)]
         [ant/col {:span 6}
          [ant/card {:style {:margin "10px" :font-size "1.4em"}}
-          [:p ctx]]])]]))
+          [:div ctx]]])]]))
 
 (defn side-menu []
   [ant/menu {:mode     "inline" :theme "dark" :style {:height "100%"}
