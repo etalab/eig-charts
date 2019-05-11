@@ -58,7 +58,10 @@
                                :backgroundColor color/green}
                               {:data            (get report/financement "Coût total salaires EIG")
                                :label           "Coût total des salaires des EIG"
-                               :backgroundColor color/orange}]}}]
+                               :backgroundColor color/orange}
+                              {:data            (get report/financement "Coût total du programme")
+                               :label           "Coût total du programme"
+                               :backgroundColor color/red}]}}]
     (js/Chart. context (clj->js chart-data))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -196,7 +199,8 @@
 (def genre-keys
   ["Pourcentage de femmes parmi les développeurs"
    "Pourcentage de femmes parmi les data scientists"
-   "Pourcentage de femmes parmi les designers"])
+   "Pourcentage de femmes parmi les designers"
+   "Pourcentage de femmes parmi les EIG"])
 
 (def genre-data
   (into [] (vals (select-keys report/eig genre-keys))))
@@ -217,7 +221,10 @@
                                :backgroundColor color/green}
                               {:data            (get genre-data 2)
                                :label           "Pourcentage de femmes parmi les designers"
-                               :backgroundColor color/orange}]}}]
+                               :backgroundColor color/orange}
+                              {:data            (get genre-data 3)
+                               :label           "Pourcentage de femmes parmi les EIG"
+                               :backgroundColor color/red}]}}]
     (js/Chart. context (clj->js chart-data))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
