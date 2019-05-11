@@ -52,25 +52,26 @@
 
 (def financement
   {"Enveloppe maximale allouée par le PIA"                                         [800000.00 2500000.00 1500000.00]
-   "Salaires pris en charge par PIA"                                               [688702.68 1735000.00 1167560.00]    
+   "Salaires pris en charge par PIA"                                               [688702.68 1600984.00 1167560.00]    
    "Salaires pris en charge par les administrations bénéficiant de co-financement" [0 0 456624.00]
    "Salaires pour les défis auto-financés"                                         [67850.70 200342.00 476180.09]
-   "Coût total salaires EIG"                                                       [756553.38 1935342.00 2100364.09]
-   "Accompagnement et mentoring"                                                   [0 75000.00 50000.00]    
-   "Environnement technique"                                                       [0 50000.00 20000.00]
-   "Communication"                                                                 [0 75000.00 80000.00]
-   "Hébergement par un tiers-lieu"                                                 [0 200000.00 75000.00]
+   "Coût total salaires EIG"                                                       [756553.38 1801326.00 2100364.09]
+   "Communication"                                                                 [0 74209.00 80000.00]
+   "Coût total communication"                                                      [0 74209.00 80000.00]
+   "Accompagnement et mentoring"                                                   [25000 34808.00 50000.00]    
+   "Environnement technique"                                                       [0 2298.00 20000.00]
+   "Hébergement par un tiers-lieu"                                                 [0 0.00 75000.00]
    "Développement et amélioration"                                                 [0 0 75000.00]
-   "Coût total accompagnement"                                                     [0 400000.00 300000.00]
-   "Liens avec la recherche"                                                       [10000.00 30000.00 30000.00]
-   "Total recherche"                                                               [10000.00 30000.00 30000.00]
-   "Coût total du programme"                                                       [766553.38 2365342.00 2430364.09]
-   "Part des salaires dans le coût total du programme"                             [98.70 81.82 86.42]   
-   "Part de la recherche dans le coût total du programme"                          [1.30 1.27 1.23]   
-   "Part du programme d'accompagnement dans le coût total du programme"            [0.00 16.91 12.34]
-   "Part de la communication dans le coût total du programme"                      [0 3.17 3.29]
-   "Part des salaires pris en charge par le PIA"                                   [91.03 89.65 55.59]   
-   "Part des défis autofinancés dans le total des salaires"                        [8.97 10.35 22.67]   
+   "Coût total accompagnement"                                                     [25000.00 37106.00 220000.00]
+   "Liens avec la recherche"                                                       [10000.00 0.00 30000.00]
+   "Total recherche"                                                               [10000.00 0.00 30000.00]
+   "Coût total du programme"                                                       [766553.38 1912641.00 2430364.09]
+   "Part des salaires dans le coût total du programme"                             [95.58 94.18 86.42]   
+   "Part de la recherche dans le coût total du programme"                          [1.26 0.00 1.23]   
+   "Part du programme d'accompagnement dans le coût total du programme"            [3.16 1.94 9.05]
+   "Part de la communication dans le coût total du programme"                      [0 3.88 3.29]
+   "Part des salaires pris en charge par le PIA"                                   [91.03 88.88 55.59]   
+   "Part des défis autofinancés dans le total des salaires"                        [8.97 11.12 22.67]   
    "Part prise en charge par les administrations en co-financement"                [0.00 0.00 21.74]})
 
 (def programme
@@ -157,4 +158,3 @@
     [:span.email "entrepreneur-interet-general AT data.gouv.fr"] "."]
    [:p "Pour toute question sur le code source de ce site, merci d'écrire à "
     [:span.email "bastien.guerry AT data.gouv.fr"] "."]])
-
