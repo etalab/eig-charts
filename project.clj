@@ -1,4 +1,4 @@
-(defproject eig "0.2.0"
+(defproject eig "0.3.0"
   :description "EIG Show: displays graphics for EIG"
   :url "https://entrepreneur-interet-general.etalab.gouv.fr/"
   :license {:name "Eclipse Public License - v 2.0"
@@ -8,8 +8,8 @@
                  [org.clojure/clojure "1.10.0"]
                  [org.clojure/clojurescript "1.10.520"]
                  [reagent "0.8.1"]
-                 [bidi "2.1.6"]
                  [cljsjs/chartjs "2.8.0-0"]
+                 [secretary "1.2.3"]
                  [venantius/accountant "0.2.4"]]
   :target-path "target/%s"
   :resource-paths ["resources"]
