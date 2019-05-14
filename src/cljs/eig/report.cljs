@@ -147,7 +147,7 @@
    [:h1 "Présentation des données"]
    [:p "Ce site présente quelques données liées au programme "
     [:a {:href "https://entrepreneur-interet-general.etalab.gouv.fr/"} "Entrepreneurs d'intérêt général."]]
-   [:p "Les données exposées ici sous forme de graphiques sont téléchargeables au format .ods."] ; FIXME
+   ;; [:p "Les données exposées ici sous forme de graphiques sont téléchargeables au format .ods."] ; FIXME
    [:h1 "Code source et licence"]
    [:p "Le code source de ce site est "
     [:a {:href "http://github.com/etalab/eig-charts"} "public"] "."]
