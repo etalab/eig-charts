@@ -1,15 +1,23 @@
-* Présentation du programme EIG
+* Graphiques autour du programme EIG
 
-Ce dépôt contient le code source pour l'affichage de graphiques à
-propos du programme [[https://entrepreneur-interet-general.etalab.gouv.fr/][Entrepreneurs d'intérêt général]].
+Ce dépôt contient le code source pour permettre l'affichage de
+graphiques à propos du programme [[https://entrepreneur-interet-general.etalab.gouv.fr/][Entrepreneurs d'intérêt général]].
 
 Le site correspondant est [[https://data.eig-forever.org][data.eig-forever.org]].
 
-Vous corrections et suggestions sont les bienvenues en ouvrant une
+Vos corrections et suggestions sont les bienvenues en ouvrant une
 /issue/ ou en ouvrant une /pull request/.
+
+* Production de l'application Javascript
+
+Pour produire le Javascript dans =resources/public/js/compiled/app.js= :
+
+: ~$ git clone https://github.com/etalab/eig-charts.git
+: ~$ cd eig-charts/
+: ~$ lein cljsbuild once
 
 * Licence
 
-2019 Etalab/DINSIC, Bastien Guerry.
+2019-2020 Etalab/DINSIC, Bastien Guerry.
 
 Le code source de ce dépôt est publié sous licence EPL 2.0.
